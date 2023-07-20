@@ -7,30 +7,21 @@
     <a href="#">チャットを終了する</a>
   </div>
 </div>
-<div class = "messages">
-  <div class="talk-wrapper">
-    <div class = "name">
-    Tom
+<% @messages.each do |message| %>
+  <div class = "messages">
+    <div class="talk-wrapper">
+      <div class = "name">
+      <%= message.name %>
+      </div>
+      <div class = "date">
+      <%= message.created_at %>
+      </div>
     </div>
-    <div class = "date">
-    2020/3/31(Wed) 12:43:30
-    </div>
+    <div class = "message">
+      <%= message.message %>
+    </div>  
   </div>
-  <div class = "message">
-    おはよう
-  </div>
-  <div class="talk-wrapper">
-    <div class = "name">
-    Tom
-    </div>
-    <div class = "date">
-    2020/3/31(Wed) 12:43:30
-    </div>
-  </div>
-  <div class = "message">
-    おはよう
-  </div>
-</div>
+<% end %>
 <div class = "form">
   <div class = "input">
     <input type = "text" class="form-message" placeholder = "type a message">
